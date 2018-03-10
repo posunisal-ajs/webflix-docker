@@ -1,0 +1,28 @@
+version: '3.2'
+services:
+    postgresql_db:
+      image: sergiosantosgt/postgresql:v1
+      container_name: postgresql
+      hostname: postgresql
+      ports:
+         - "55432:5432"
+      networks: 
+        - unisal
+      tty: true  
+    
+    tomcat_web:
+      image: sergiosantosgt/my-tomcat:v1
+      container_name: tomcat
+      hostname: tomcat
+      ports:
+        - "10180:8080"
+      networks: 
+          - unisal
+      tty: true
+      depends_on:
+        - postgresql_db
+
+
+networks: 
+    unisal:
+      driver: bridge 
