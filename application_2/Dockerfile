@@ -5,7 +5,7 @@ RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
 RUN  dpkg-divert --local --rename --add /sbin/initctl
 
-ENV APPLICATION_LINK_WAR https://github.com/posunisal-ajs/webflix-war/blob/master/webflix-app.war
+ENV APPLICATION_LINK_WAR https://github.com/posunisal-ajs/webflix-docker/blob/master/application_2/webflix-app.war
 
 RUN mkdir -p /tmp/resources
 
